@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.LivrosController">
+   <top>
+      <VBox prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <JFXTextField editable="false" labelFloat="true" prefHeight="25.0" prefWidth="62.0" promptText="ID" />
+                  <JFXTextField labelFloat="true" prefHeight="25.0" promptText="Título" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <JFXTextField labelFloat="true" promptText="Autor" HBox.hgrow="ALWAYS" />
+                  <JFXTextField labelFloat="true" promptText="Lançamento" />
+                  <JFXComboBox promptText="Categoria" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" spacing="10.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <JFXButton text="Salvar" />
+                  <JFXButton text="Editar" />
+                  <JFXButton text="Excluir" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" spacing="10.0">
+               <children>
+                  <JFXComboBox promptText="Selecione" />
+                  <JFXTextField promptText="Pesquisar" />
+                  <JFXButton text="Filtrar" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uai.main;
+package ui.main;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -25,8 +25,8 @@ public class Main extends Application{
         
         Scene cena = new Scene(principal);
         
-        stage.setTitle("TecaOs");
-        stage.getIcons().add(new Image("/images/book-stack-of-three.png"));
+        stage.setTitle("TecaOS");
+        stage.getIcons().add(new Image("/images/books-stack-of-three.png"));
         stage.setScene(cena);
         stage.show();
     }

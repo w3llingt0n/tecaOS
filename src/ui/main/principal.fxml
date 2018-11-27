@@ -10,25 +10,28 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uai.main.PrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.PrincipalController">
    <top>
       <MenuBar fx:id="menu" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Empréstimo">
+          <Menu mnemonicParsing="false" text="Empréstimos">
             <items>
-              <MenuItem mnemonicParsing="false" text="Emprestar" />
-                  <MenuItem mnemonicParsing="false" text="Consultar Empréstimos" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirEmprestimos" text="Abrir" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Devoluções">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#abrirDevoluções" text="Abrir" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Clientes">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirClientes" text="Abrir" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Livros">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirLivros" text="Abrir" />
             </items>
           </Menu>
         </menus>
