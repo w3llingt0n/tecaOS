@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableView?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.ClientesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.clientes.ClientesController">
    <top>
       <VBox prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -32,7 +33,7 @@
                <children>
                   <JFXTextField fx:id="cpf" labelFloat="true" promptText="CPF" HBox.hgrow="ALWAYS" />
                   <JFXTextField fx:id="rg" labelFloat="true" layoutX="15.0" layoutY="15.0" promptText="RG" HBox.hgrow="ALWAYS" />
-                  <JFXTextField fx:id="dataNascimento" labelFloat="true" layoutX="160.0" layoutY="15.0" promptText="Data de Nacimento" HBox.hgrow="ALWAYS" />
+                  <JFXDatePicker fx:id="dataNascimento" promptText="Data de Nascimento" HBox.hgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -46,7 +47,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <JFXTextField labelFloat="true" promptText="E-mail" HBox.hgrow="ALWAYS" />
+                  <JFXTextField fx:id="email" labelFloat="true" promptText="E-mail" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="TOP_RIGHT" layoutX="20.0" layoutY="130.0" prefWidth="200.0" spacing="10.0">
@@ -57,9 +58,9 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <JFXButton text="Salvar" />
-                  <JFXButton layoutX="15.0" layoutY="15.0" text="Editar" />
-                  <JFXButton layoutX="15.0" layoutY="15.0" text="Excluir" />
+                  <JFXButton onAction="#salvar" text="Salvar" />
+                  <JFXButton layoutX="15.0" layoutY="15.0" onAction="#editar" text="Editar" />
+                  <JFXButton layoutX="15.0" layoutY="15.0" onAction="#excluir" text="Excluir" />
                </children>
             </HBox>
             <HBox layoutX="20.0" layoutY="185.0" prefWidth="200.0" spacing="10.0">
@@ -70,15 +71,18 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <JFXComboBox promptText="Selecione" />
-                  <JFXTextField labelFloat="true" promptText="Pesquisar" />
-                  <JFXButton text="Filtar" />
+                  <JFXComboBox fx:id="comboBusca" promptText="Selecione" />
+                  <JFXTextField fx:id="busca" labelFloat="true" promptText="Pesquisar" />
+                  <JFXButton onAction="#filtrar" text="Filtrar" />
                </children>
             </HBox>
          </children>
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TableView fx:id="tabela" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy></TableView>
    </center>
 </BorderPane>

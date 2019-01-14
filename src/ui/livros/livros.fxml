@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.LivrosController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.livros.LivrosController">
    <top>
       <VBox prefHeight="200.0" BorderPane.alignment="CENTER">
          <children>
             <HBox spacing="10.0">
                <children>
-                  <JFXTextField editable="false" labelFloat="true" prefHeight="25.0" prefWidth="62.0" promptText="ID" />
-                  <JFXTextField labelFloat="true" prefHeight="25.0" promptText="Título" HBox.hgrow="ALWAYS" />
+                  <JFXTextField fx:id="id" editable="false" labelFloat="true" prefHeight="25.0" prefWidth="62.0" promptText="ID" />
+                  <JFXTextField fx:id="titulo" labelFloat="true" prefHeight="25.0" promptText="Título" HBox.hgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -27,9 +27,10 @@
             </HBox>
             <HBox spacing="10.0">
                <children>
-                  <JFXTextField labelFloat="true" promptText="Autor" HBox.hgrow="ALWAYS" />
-                  <JFXTextField labelFloat="true" promptText="Lançamento" />
-                  <JFXComboBox promptText="Categoria" HBox.hgrow="ALWAYS" />
+                  <JFXTextField fx:id="autor" labelFloat="true" promptText="Autor" HBox.hgrow="ALWAYS" />
+                  <JFXTextField fx:id="lancamento" labelFloat="true" promptText="Lançamento" />
+                  <JFXComboBox fx:id="comboCategoria" prefHeight="25.0" prefWidth="123.0" promptText="Categoria" HBox.hgrow="ALWAYS" />
+                  <JFXTextField fx:id="quantidade" promptText="Quantidade" HBox.hgrow="SOMETIMES" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -43,9 +44,9 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <JFXButton text="Salvar" />
-                  <JFXButton text="Editar" />
-                  <JFXButton text="Excluir" />
+                  <JFXButton onAction="#salvar" text="Salvar" />
+                  <JFXButton onAction="#editar" text="Editar" />
+                  <JFXButton onAction="#excluir" text="Excluir" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -53,9 +54,9 @@
             </HBox>
             <HBox prefHeight="100.0" spacing="10.0">
                <children>
-                  <JFXComboBox promptText="Selecione" />
-                  <JFXTextField promptText="Pesquisar" />
-                  <JFXButton text="Filtrar" />
+                  <JFXComboBox fx:id="comboBusca" promptText="Selecione" />
+                  <JFXTextField fx:id="busca" promptText="Pesquisar" />
+                  <JFXButton onAction="#filtrar" text="Filtrar" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -68,6 +69,6 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TableView fx:id="tabela" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

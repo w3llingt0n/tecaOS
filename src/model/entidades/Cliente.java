@@ -8,6 +8,15 @@ import java.time.LocalDate;
  */
 public class Cliente {
 
+    public Cliente(String id,String nome, String cpf, String rg, LocalDate dataNasc, String email) {
+        this.setId(id);
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setRg(rg);
+        this.setDataNasc(dataNasc);
+        this.setEmail(email);
+    }
+    
     public Cliente(int id, String nome, String cpf, String rg, LocalDate dataNasc, String email) {
         this.setId(id);
         this.setNome(nome);
@@ -30,6 +39,9 @@ public class Cliente {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public void setId(String id){
+        this.id = Integer.parseInt(id);
     }
 
     public String getNome() {
@@ -71,5 +83,5 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
 }

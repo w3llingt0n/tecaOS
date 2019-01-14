@@ -9,50 +9,53 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Wellington
+ * @author rapwe
  */
-public class Emprestimo {
+public class Devolucao {
 
-    public Emprestimo(String id, String livro, String cliente, LocalDate dataEmprestimo, LocalDate dataDevolucao) {
+    public Devolucao(String id, int emprestimo, String cliente, int livro, LocalDate dataDevolucao, double multa) {
         this.setId(id);
-        this.setLivro(livro);
+        this.setEmprestimo(emprestimo);
         this.setCliente(cliente);
+        this.setLivro(livro);
         this.setDataDevolucao(dataDevolucao);
-        this.setDataEmprestimo(dataEmprestimo);
+        this.setMulta(multa);
     }
 
-    public Emprestimo(int id, String livro, String cliente, LocalDate dataEmprestimo, LocalDate dataDevolucao) {
+    public Devolucao(int id, int emprestimo, String cliente, int livro, LocalDate dataDevolucao, double multa) {
         this.setId(id);
-        this.setLivro(livro);
+        this.setEmprestimo(emprestimo);
         this.setCliente(cliente);
+        this.setLivro(livro);
         this.setDataDevolucao(dataDevolucao);
-        this.setDataEmprestimo(dataEmprestimo);
+        this.setMulta(multa);
     }
 
     private int id;
-    private String livro;
+    private int emprestimo;
     private String cliente;
-    private LocalDate dataEmprestimo;
+    private int livro;
     private LocalDate dataDevolucao;
+    private double multa;
 
     public int getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = Integer.parseInt(id);
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getLivro() {
-        return livro;
+    public void setId(String id) {
+        this.id = Integer.parseInt(id);
     }
 
-    public void setLivro(String livro) {
-        this.livro = livro;
+    public int getEmprestimo() {
+        return emprestimo;
+    }
+
+    public void setEmprestimo(int emprestimo) {
+        this.emprestimo = emprestimo;
     }
 
     public String getCliente() {
@@ -63,12 +66,12 @@ public class Emprestimo {
         this.cliente = cliente;
     }
 
-    public LocalDate getDataEmprestimo() {
-        return dataEmprestimo;
+    public int getLivro() {
+        return livro;
     }
 
-    public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
+    public void setLivro(int livro) {
+        this.livro = livro;
     }
 
     public LocalDate getDataDevolucao() {
@@ -77,5 +80,13 @@ public class Emprestimo {
 
     public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
+    }
+
+    public double getMulta() {
+        return multa;
+    }
+
+    public void setMulta(double multa) {
+        this.multa = multa;
     }
 }

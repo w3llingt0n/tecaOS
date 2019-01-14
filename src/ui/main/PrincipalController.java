@@ -5,7 +5,6 @@
  */
 package ui.main;
 
-import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +18,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -30,12 +28,6 @@ import javafx.stage.Stage;
 public class PrincipalController implements Initializable {
 
     @FXML
-    private AnchorPane login;
-    @FXML
-    private JFXTextField user;
-    @FXML
-    private JFXTextField password;
-    @FXML
     private MenuBar menu;
 
     /**
@@ -43,12 +35,6 @@ public class PrincipalController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        menu.setDisable(true);
-    }
-
-    @FXML
-    private void logar(ActionEvent event) {
-        menu.setDisable(false);
     }
 
     @FXML
@@ -56,7 +42,7 @@ public class PrincipalController implements Initializable {
         Stage stage = new Stage();
         Parent principal;
         try {
-            principal = FXMLLoader.load(getClass().getResource("emprestimo.fxml"));
+            principal = FXMLLoader.load(getClass().getResource("/ui/emprestimos/emprestimo.fxml"));
             Scene cena = new Scene(principal);
 
             stage.setTitle("Empréstimos");
@@ -67,13 +53,13 @@ public class PrincipalController implements Initializable {
             Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     @FXML
-    private void abrirDevoluções(ActionEvent event) {
+    private void abrirDevolucoes(ActionEvent event) {
         Stage stage = new Stage();
         Parent principal;
         try {
-            principal = FXMLLoader.load(getClass().getResource("devolucao.fxml"));
+            principal = FXMLLoader.load(getClass().getResource("/ui/devolucao/devolucao.fxml"));
             Scene cena = new Scene(principal);
 
             stage.setTitle("Devoluções");
@@ -90,7 +76,7 @@ public class PrincipalController implements Initializable {
         Stage stage = new Stage();
         Parent principal;
         try {
-            principal = FXMLLoader.load(getClass().getResource("clientes.fxml"));
+            principal = FXMLLoader.load(getClass().getResource("/ui/clientes/clientes.fxml"));
             Scene cena = new Scene(principal);
 
             stage.setTitle("Clientes");
@@ -107,7 +93,7 @@ public class PrincipalController implements Initializable {
         Stage stage = new Stage();
         Parent principal;
         try {
-            principal = FXMLLoader.load(getClass().getResource("livros.fxml"));
+            principal = FXMLLoader.load(getClass().getResource("/ui/livros/livros.fxml"));
             Scene cena = new Scene(principal);
 
             stage.setTitle("Livros");
@@ -119,4 +105,20 @@ public class PrincipalController implements Initializable {
         }
     }
 
+    @FXML
+    private void abrirMultas(ActionEvent event) {
+        Stage stage = new Stage();
+        Parent principal;
+        try {
+            principal = FXMLLoader.load(getClass().getResource("/ui/multas/multas.fxml"));
+            Scene cena = new Scene(principal);
+
+            stage.setTitle("Multas");
+            stage.getIcons().add(new Image("/images/books-stack-of-three.png"));
+            stage.setScene(cena);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(PrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

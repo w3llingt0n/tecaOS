@@ -19,6 +19,7 @@ import javafx.stage.Stage;
  * @author rapwe
  */
 public class Main extends Application{
+    @Override
     public void start(Stage stage) throws IOException{
         Locale.setDefault(new Locale("pt", "BR"));
         Parent principal = FXMLLoader.load(getClass().getResource("principal.fxml"));

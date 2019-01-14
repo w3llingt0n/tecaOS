@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.PrincipalController">
    <top>
       <MenuBar fx:id="menu" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Empréstimos">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#abrirEmprestimos" text="Abrir" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Devoluções">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#abrirDevoluções" text="Abrir" />
-              </items>
-            </Menu>
           <Menu mnemonicParsing="false" text="Clientes">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#abrirClientes" text="Abrir" />
@@ -34,32 +19,22 @@
               <MenuItem mnemonicParsing="false" onAction="#abrirLivros" text="Abrir" />
             </items>
           </Menu>
+          <Menu mnemonicParsing="false" text="Empréstimos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#abrirEmprestimos" text="Abrir" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Devoluções">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#abrirDevolucoes" text="Abrir" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Multas">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#abrirMultas" text="Abrir" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
-   <center>
-      <AnchorPane fx:id="login" BorderPane.alignment="CENTER">
-         <children>
-            <VBox alignment="CENTER" prefHeight="379.0" prefWidth="600.0">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <JFXTextField fx:id="user" prefHeight="25.0" prefWidth="250.0" promptText="Usuário" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <JFXTextField fx:id="password" prefHeight="25.0" prefWidth="250.0" promptText="Senha" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <JFXButton onAction="#logar" text="Confirmar" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-   </center>
 </BorderPane>

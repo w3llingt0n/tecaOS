@@ -1,32 +1,46 @@
 package model.entidades;
 
-import java.time.Year;
-
 /**
  *
  * @author Wellington
  */
 public class Livro {
 
-    public Livro(String isbn, String nome, Year lancamento, String autor, String categoria) {
-        this.setIsbn(isbn);
-        this.setNome(nome);
-        this.setLancamento(lancamento);
+    public Livro(int id, String titulo, String anoLancamento, String autor, String categoria, int quantidade) {
+        this.setId(id);
+        this.setTitulo(titulo);
+        this.setAnoLancamento(anoLancamento);
         this.setAutor(autor);
         this.setCategoria(categoria);
-    }
-
-    public Livro(String isbn, String nome, Year lancamento, String autor, String categoria, int quantidade) {
-        this(isbn, nome, lancamento, autor, categoria);
         this.setQuantidade(quantidade);
     }
 
-    private String isbn;
-    private String nome;
-    private Year lancamento;
+    public Livro(String id, String titulo, String anoLancamento, String autor, String categoria, int quantidade) {
+        this.setId(id);
+        this.setTitulo(titulo);
+        this.setAnoLancamento(anoLancamento);
+        this.setAutor(autor);
+        this.setCategoria(categoria);
+        this.setQuantidade(quantidade);
+    }
+
+    public Livro(String id, String titulo, String anoLancamento, String autor, String categoria, int quantidade, int emprestados) {
+        this(id, titulo, anoLancamento, autor, categoria, quantidade);
+        this.setEmprestados(emprestados);
+    }
+
+    public Livro(int id, String titulo, String anoLancamento, String autor, String categoria, int quantidade, int emprestados) {
+        this(id, titulo, anoLancamento, autor, categoria, quantidade);
+        this.setEmprestados(emprestados);
+    }
+
+    private int id;
+    private String titulo;
+    private String anoLancamento;
     private String autor;
     private String categoria;
     private int quantidade;
+    private int emprestados;
 
     public int getQuantidade() {
         return quantidade;
@@ -36,28 +50,32 @@ public class Livro {
         this.quantidade = quantidade;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public int getId() {
+        return id;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setId(String id) {
+        this.id = Integer.parseInt(id);
     }
 
-    public String getNome() {
-        return nome;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public Year getLancamento() {
-        return lancamento;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setLancamento(Year lancamento) {
-        this.lancamento = lancamento;
+    public String getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(String anoLancamento) {
+        this.anoLancamento = anoLancamento;
     }
 
     public String getAutor() {
@@ -74,6 +92,14 @@ public class Livro {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public int getEmprestados() {
+        return emprestados;
+    }
+
+    public void setEmprestados(int emprestados) {
+        this.emprestados = emprestados;
     }
 
 }
